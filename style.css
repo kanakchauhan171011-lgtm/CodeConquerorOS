@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-image: url(background.jpg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color: white;
+    transition: background 0.5s ease;
+}
+
+.glass {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.window {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 10;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.window-active { 
+    z-index: 100 !important; 
+    border: 1px solid rgba(59, 130, 246, 0.5); 
+}
+
+.title-bar {
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.app-body { 
+    background: #0f1115; 
+    flex-grow: 1; 
+    position: relative; 
+}
+
+.dock-icon {
+    width: 55px; height: 55px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dock-icon:hover {
+    transform: translateY(-15px) scale(1.1);
+    background: rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
+}
+
+#boot-screen {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.conqueror-btn {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    transition: opacity 0.2s;
+}
